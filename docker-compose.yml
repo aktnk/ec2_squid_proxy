@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  terraform:
+    image: hashicorp/terraform:1.4.5
+    volumes:
+      - ~/.aws:/root/.aws:ro 
+      - ./source:/workdir
+    working_dir: "/workdir"
+    environment:
+      - AWS_PROFILE
+    entrypoint: "ash"
+    tty: true
