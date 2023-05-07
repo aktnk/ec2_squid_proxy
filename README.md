@@ -20,6 +20,11 @@ Using Terraform, build a Squid proxy server on AWS EC2.
 
 1. Preparation
   * Create the squid.conf file according to requirements.
+    **Note:**  
+    The following line in squid.conf must be changed to the address or network address of the PC that will use this proxy. Otherwise , an error will occur when executing terraform command.
+    ```
+    acl localnet src <my pc grobal ip address/32>
+    ```
   * Place the created file in source/config directory.
 
 2. Initialize
